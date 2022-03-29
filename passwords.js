@@ -19,5 +19,13 @@ function encryptAES(key, plainText){
     console.log(encryptedText)
     return encryptedText
 }
-key = keyDerivation("Thisisapassword!")
-encryptedText = encryptAES(key, "Hello my name is shanmuga")
+function decryptAES(key, cipherText){
+    let decryptedText = CryptoJS.AES.decrypt(cipherText,key.toString())
+    let plainText = decryptedText.toString(CryptoJS.enc.Utf8)
+    console.log(plainText)
+    return plainText
+}
+
+let key = keyDerivation("Thisisapassword!")
+let encryptedText = encryptAES(key, "Hello my name is shanmuga")
+let text = decryptAES(key, encryptedText)
