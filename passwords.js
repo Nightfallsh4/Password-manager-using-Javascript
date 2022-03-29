@@ -41,15 +41,15 @@ function passwordGenerate(passwordLength){
     for (let i= 0 ; i<passwordLength;i++){
         let num = crypto.getRandomValues(new Uint8Array(12))[0]
         for (let j = 0; j<10;j++) {
-            if (num > 91){
+            if (num >= 91){
                 num = num%91
             }else{
                 j = 11
             }
         }
         password += data[num]
+        // console.log(num)
     }
-    // console.log(num)
     console.log(password)
     console.log(password.length)
 }
