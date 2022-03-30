@@ -51,6 +51,21 @@ function passwordGenerate(passwordLength=15){
 }
 
 // Take in master password and use it to try and decrypt the databade of the given username
+const submit = document.getElementById("submitButton")
+const usernameInput = document.getElementById("usernameInput")
+const passwordInput = document.getElementById("passwordInput")
+submit.addEventListener("click",submitFunction)
+function submitFunction(){
+    console.log("The submit button works!!")
+    let givenUsername = usernameInput.value
+    usernameInput.value = ""
+    let givenPassword = passwordInput.value
+    passwordInput.value = ""
+    console.log("Username- "+givenUsername)
+    console.log("Passowrd- "+givenPassword)
+    
+
+}
 // Render the decrypted database with each accounts username and password with can be clicked to be copied
 // Add a lock button which will lock the database
 // Add a 'add' button which can be used to add an account, passwords of the accounts will be encrypted using aes and the user's master password
